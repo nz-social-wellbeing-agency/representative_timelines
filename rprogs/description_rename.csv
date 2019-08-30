@@ -1,0 +1,58 @@
+source,description,rename_to
+acc claim,ACC claim,ACC claim
+HNZ,HNZ tenant,HNZ tenant
+local board,Mangere-Otahuhu Local Board Area,Mangere-Otahuhu Local Board Area
+local board,Manurewa Local Board Area,Manurewa Local Board Area
+local board,Otara-Papatoetoe Local Board Area,Otara-Papatoetoe Local Board Area
+local board,Papakura Local Board Area,Papakura Local Board Area
+moe enroll,1st stage tertiary,enrolled education
+moe enroll,2nd stage tertiary,enrolled education
+moe enroll,Enrollment = Unknown,enrolled education
+moe enroll,"Post-secondary, non-tertiary",enrolled education
+moe enroll,Upper secondary,enrolled education
+moe industry training,indust train,enrolled education
+moe targeted training,targeted training enroll,enrolled education
+moe x3,qual level awarded,qual level awarded
+moh labs,lab test,lab test
+moh maternity,BIRTH WEIGHT,BIRTH WEIGHT
+moh maternity,Mothers age at birth,Mothers age at birth
+moh maternity,number of contacts with LMC antenatal,number of contacts with LMC antenatal
+moh maternity,number of contacts with LMC postnatal,number of contacts with LMC postnatal
+moh maternity,previous pregnancies,previous pregnancies
+moh nnpac,ED visit,ED visit
+moh nnpac,out patient visit,out patient visit
+moh pfhd,admitted to hospital,admitted to hospital
+moh pho,active PHO use,active PHO use
+msd T1 SIAL,Community Wage Emergency Job Seeker,Job Seeker
+msd T1 SIAL,Community Wage Job Seekers,Job Seeker
+msd T1 SIAL,Community Wage Sickness Benefit,Supported Living
+msd T1 SIAL,DPB Caring for Sick or Infirm,Supported Living
+msd T1 SIAL,DPB Sole Parent,Sole Parent
+msd T1 SIAL,DPB Woman Alone,Supported Living
+msd T1 SIAL,Emergency Unemployment Benefit,Job Seeker
+msd T1 SIAL,Emergency Unemployment Student,Job Seeker
+msd T1 SIAL,Invalid's Benefit,Supported Living
+msd T1 SIAL,Job Search Allowance,Job Seeker
+msd T1 SIAL,Job Seeker Health Condition & Disability,Job Seeker
+msd T1 SIAL,Job Seeker Health Condition & Disability Hardship,Job Seeker
+msd T1 SIAL,Job Seeker Student Hardship,Job Seeker
+msd T1 SIAL,Job Seeker Work Ready,Job Seeker
+msd T1 SIAL,Job Seeker Work Ready Hardship,Job Seeker
+msd T1 SIAL,Job Seeker Work Ready Training,Job Seeker
+msd T1 SIAL,Job Seeker Work Ready Training Hardship,Job Seeker
+msd T1 SIAL,Sickness Benefit,Supported Living
+msd T1 SIAL,Sole Parent Support,Sole Parent
+msd T1 SIAL,Sole Parent Support Overseas,Sole Parent
+msd T1 SIAL,Supported Living Payment Overseas,Supported Living
+msd T1 SIAL,Supported Living Payments Carers,Supported Living
+msd T1 SIAL,Supported Living Payments Health Condition & Disability,Supported Living
+msd T1 SIAL,Unemployment Benefit,Job Seeker
+msd T1 SIAL,Unemployment Benefit (Training),Job Seeker
+msd T1 SIAL,Unemployment Benefit Hardship,Job Seeker
+msd T1 SIAL,Unemployment Benefit Student Hardship,Job Seeker
+msd T1 SIAL,Widow's Benefit,Supported Living
+msd T1 SIAL,Widow's Benefit Overseas,Supported Living
+msd T1 SIAL,Young Parent Payment,Sole Parent
+msd t2 benefits,Accommodation Benefit,Accommodation Supplement
+msd t2 benefits,Accommodation Supplement,Accommodation Supplement
+msd t2 benefits,Away From Home Allowance,Accommodation Supplement
