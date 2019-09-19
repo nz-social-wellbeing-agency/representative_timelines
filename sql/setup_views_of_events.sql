@@ -6,7 +6,7 @@ Input: IDI Clean
 Output: Event view in IDI Sandpit
  
 Author: Simon Anastasiadis
-Reviewer: Akilesh Cokkanathapuram
+Reviewer: Akilesh Chokkanathapuram
  
 Dependencies:
  
