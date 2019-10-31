@@ -1,61 +1,55 @@
 # representative_timelines
 Data assembly methodology for producing representative timelines
 
-# timeline_visualisation
-
-An interactive visualisation tool for exploring journey timelines.
-
 ## Overview
 
-This repsoitory contains the code necessary to run SIA's interactive timeline visualisation tool. Developed as part of SIA's cross-sector representative timeline modeling, however it can be used independently of our timeline construction methodology (https://github.com/nz-social-investment-agency/representative_timelines).
+This repository provides the code for constructing cross-sector representative timelines of people's experiences. It should be used alongside the technical guidance **Representative timeline modelling of people's experiences: Analytic methodology** and the factsheet **Modelling Insights – timelines of people’s lived experience** released by SIA.
 
-## Features
+This analysis was first developed to understand the expereince of families in South Auckland around the birth of a child. This research was conducted in partnership between the Social Investment Agency (SIA) and The Southern Initiative (TSI). While parts of the code are written in the context of families and the birth of a child, the methodology is general and can be applied to a variety of journeys.
 
-TO DO
+## Dependencies
 
-## Installation and dependencies
+In order to repeat this analysis, or adapt this project in the IDI, it is necessary to have an approved IDI project. Visit the Stats NZ website for more information. To repeat this analysis in a different environment you will need R, RStudio and SQL installed. Your environment will also have to be configured to allow R to connect with, and fetch data from, SQL.
 
+The analysis requires several R packages in order to run. These are not programs, but public code of a similar nature to the code files included in this repository (but developed and reviewed by much larger teams of professional developers). You will need these packages installed in your environment in order to run the analysis.
 
+As R packages can be updated from time to time users experiencing difficulties may wish to download the exact same version of these packages as were used in development. The packages and their versions are as follows: `TraMinR` version 2.0.10, `cluster` version 2.0.6, `Matrix` version 1.2.10, `tidyverse` version 1.2.1, `odbc` version 1.1.5, `DBI` version 0.8.0, `dplyr` version 0.7.6, `dbplyr` version 1.2.2.
 
-It is necessary to have an IDI project if you wish to run the code. Visit the Stats NZ website for more information.
-
-Depending on your existing environment, expertise, and intended use of the visualisation app the steps you need to install the app may vary. Consider each of the following sections in turn.
-
-### Packages
-
-The visualsiation tool requires several R packages in order to run. These are not programs, but public code of a similar nature to the code files included in this repositry (but developed and reviewed by much larger teams of professional developers).
-
-The four code packages are shiny, shinywidgets, tidyverse and readxl. All four of these packages are well established and reviewed. As the packages can be updated from time to time users experiencing difficulties may wish to download the exact same version of these packages as were used in the development of the interactive visualisation. The versions of each packages are as follows:
-
- - shiny, version 1.3.2
- - shinywidgets, version 0.4.8
- - tidyverse, version 1.2.1
- - readxl, version 1.3.1
-
-The code for installing these specific versions of the packages is:
+The code for installing a specific version of the packages is:
 ```
 install.packages(devtools)
-install_version("shiny", version = "1.3.2", repos = "http://cran.us.r-project.org")
-install_version("shinywidgets", version = "0.4.8" repos = "http://cran.us.r-project.org")
-install_version("tidyverse", version = "1.2.1", repos = "http://cran.us.r-project.org")
-install_version("readxl", version = "1.3.1", repos = "http://cran.us.r-project.org")
+library(devtools)
+install_version("package_name", version = "x.x.x", repos = "http://cran.us.r-project.org")
 ```
 
-### Visualisation
+## Visualisation
 
-This repositry does not include specific tools for visualising the resulting output. A visualisation tool for the results can be found in its own repository: [timeline_visualisation](https://github.com/nz-social-investment-agency/timeline_visualisation). In general, our approach has been to use the code in this repository to prepare the data that describes the representative timelines, submit this data for review and checking by Stats NZ, and load the data into the visualisation tool once it has been released from the lab. Instructions for the timeline visualisation can be found in its repository.
+This repositry does not include specific tools for visualising the resulting output. A visualisation tool for the results can be found in its own repository: [timeline_visualisation](https://github.com/nz-social-investment-agency/timeline_visualisation). In general, our approach has been to use the code in this repository to prepare the data that describes the representative timelines, submit this data for review and checking by Stats NZ, and load the data into the visualisation tool once it has been released from the IDI. Instructions for the timeline visualisation can be found in its own repository.
 
 ## Folder and file descriptions
 The folder contains the code to first prepare individual resolution timelines, and then to group and summarise these timelines to produce representative timelines.
 
-The key files and folders are:
+The key files are:
 
- - **global.R** is one of the core files for the base version of the visualsation app, it is responsible for the initial setup and preparation.
-- **server.R** is one of the core files for the base version of the visualsation app, it is responsible for the background calculations and data management.
-- **ui.R** is one of the core files for the base version of the visualsation app, it is responsible for the display and responsiveness of the user interface.
-- **reference_app.R** is a docmentation file, providing a demonstration of a less common coding technique used in the app. Developers seeking to modify the code are advised to first familiarse themselves with the contents of this demo.
-- **comparison_variant** contains all the equivalent core files (global, server and ui) for the comparison variant of the visualisation app.
-- **www** contains the data files loaded by the app when it is run. Users seeking to investigate different data files should place them here.
+ - **sql/setup_views_of_Events.sql** this creates SQL views of the birth events and the roles associated with each event.
+- **sql/setup_views_of_indicators.sql** this creates SQL views of all of the measures that will be included in the timeline, and summarised alongside the timeline.
+- **rprogs/stage_details.csv** is one of the three control files. This file governs the definition of which time periods are of interest, including the time periods that make up the timeline. All time periods are defined relative to the date of the reference event (the birth in our example).
+- **rprogs/measures_process.csv** is one of the three control files. This file governs which measures are summaried for which periods and roles. E.g. we only calculate number of previous pregnancies for the mother.
+- **rprogs/description_rename.csv** is one of the three control files. This file governs renaming of specific inputs during the data assembly.
+- **rprogs/journey_timelines.R** runs the first stage of the data assembly and prepares the data into individual timelines according to the three control files.
+- **rprogs/journey_output.R** takes the informaiton prepared for individual timelines, groups and summarises it to produce representative timelines.
+
+## Adaptation
+
+Researchers should feel free to repurpose this methodology to construct cross-sector representative timelines of other journeys. In developing this analysis we have sought to separate the population and measure definitions from the data processing. This means that when repeating the analysis, users should only need to change a limit collection of files and inputs.
+
+Prior to adapting this methodology we recommend researchers review the methodology diagrams found at the end of **Representative timeline modelling of people's experiences: Analytic methodology**. Adaptation is then recommended in the following order:
+
+* Update the definition of the reference events and reference population in the appropriate SQL file. Following this, revise the control file that defines each time period.
+* Update the definition of the measures to be analysed in the appropriate SQL file. Following this, revise the control file that defines how each measure is to be summarised.
+* Revise the control file that renames variables if necessary.
+* Run the R script to create individual level timelines.
+* Run the R script to combine individual timelines into representative timelines.
 
 ## Getting Help
 If you have any questions email info@sia.govt.nz
