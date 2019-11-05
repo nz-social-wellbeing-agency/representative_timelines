@@ -34,10 +34,10 @@ DEVELOPMENT_MODE = FALSE
 CAUTIOUS_MODE = TRUE
 SINGLE_LARGE_AREA_MODE = FALSE
 # cluster settings
-NUMBER_OF_CLUSTERS = 12
-NUMBER_OF_BATCHES = 25
-SEQUENCE_CHANNEL_BATCH_SIZE = 6
-CLUSTER_PLOT = TRUE
+NUMBER_OF_CLUSTERS = 12 # number of algorithmic clusters to produce
+NUMBER_OF_BATCHES = 25 # number of batches to use, metaclustering then clusters (num-cluster * num-batch records)
+SEQUENCE_CHANNEL_BATCH_SIZE = 6 # to speed up seqdistmc in sequence_collection_to_distances
+CLUSTER_PLOT = TRUE # whether or not to plot meta clustering results
 
 # input tables
 EVENT_TABLE = "jt_event_locations"

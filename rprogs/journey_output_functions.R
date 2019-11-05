@@ -110,6 +110,13 @@ single_measure = function(df, measure, identity_list){
 #' even though the final distance is the sum of all channels. Hence we break processing into
 #' batches of channels, with argument: batch_size
 #' 
+#' The SEQUENCE_CHANNEL_BATCH_SIZE user parameter is passed to the batch_size argument of 
+#' this function. It is used to speed up the running of seqdistmc. The value of this parameter
+#' should be chosen such that:
+#'  - the value is greater than 1 and a whole number
+#'  - the value is small, between 2 and 10 is recommended
+#'  - (the number of timeline variables/measures) divided by the parameter does not have remainder 1
+#' 
 sequence_collection_to_distances = function(sequence_collection, identity_list, batch_size){
   # checks
   assert(nrow(sequence_collection[[1]]) == length(identity_list),
