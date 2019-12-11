@@ -37,10 +37,6 @@ for(package in required_packages)
 #' All columns that are not 'event_identity' or 'sequence_name' are assumed to be 
 #' the sequence, in order.
 #' 
-
-
-
-
 data_frame_to_sequence_collection = function(df, event_identity, sequence_name){
   # checks
   assert(is.character(event_identity), "event_identity must be of type character")
