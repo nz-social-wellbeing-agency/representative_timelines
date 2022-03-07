@@ -1,4 +1,4 @@
-# representative_timelines
+# Representative Timelines
 Data assembly methodology for producing representative timelines
 
 ## Overview
@@ -52,6 +52,10 @@ Prior to adapting this methodology, we recommend researchers review the methodol
 * Run the R script to combine individual timelines into representative timelines, adapting as necessary.
 
 To minimise the changes required in the R scripts, it is important to avoid changing the names of the columns in the SQL tables and views used by the R process. By extension, we also recommend including all the columns as named in our analysis even if some of these are redundant (for example, even if multiple roles in the same journey are not of interest in your adaptation you still need to include a column for role). Renaming input columns or removing columns will cause the analysis to break.
+
+## Citation
+
+Social Wellbeing Agency (2019). Representative timelines. Source code. https://github.com/nz-social-wellbeing-agency/representative_timelines
 
 ## Getting Help
 If you have any questions email info@swa.govt.nz
